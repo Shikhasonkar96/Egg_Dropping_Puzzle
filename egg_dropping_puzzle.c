@@ -10,15 +10,14 @@
 
 int memo[MAX_EGGS][MAX_FLOORS];
 
-int 
-eggDrop(int n, int k)
+int eggDrop(int n, int k)
 {    
     if (k == 0)
-        return (0); 
+        return 0; 
     if (k == 1)
-        return (1); 
+        return 1; 
     if (n == 1)
-        return (k); 
+        return k; 
 
     if (memo[n][k] > -1) 
         return (memo[n][k]); 
@@ -31,8 +30,7 @@ eggDrop(int n, int k)
     return (memo[n][k] = ans + 1); 
 }
 
-int 
-main()
+int main()
 {    
     memset(memo, -1, sizeof(memo));
 
@@ -44,5 +42,5 @@ main()
 
     printf("Minimum Number of attempts required in Worst case = %d \n", eggDrop(n,k));
 
-    return (0);
+    return 0;
 }
